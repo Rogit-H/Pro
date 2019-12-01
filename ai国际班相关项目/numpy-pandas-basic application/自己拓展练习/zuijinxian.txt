@@ -1,0 +1,24 @@
+import pprint
+import numpy as np
+import matplotlib.pyplot as plt
+
+A = np.array([[0,1], [1,1], [2,1], [3,1], [3,1], [4,1]])
+b = np.array([[2], [4], [0], [2], [5], [3]])
+
+A_plus = np.linalg.pinv(A)
+coefs = A_plus.dot(b)
+
+a = coefs[0]
+b = coefs[1]
+
+print("斜率：%f, 截距: %f" %(a,b))
+print(coefs)
+
+x = np.arange(0, 10)
+y = a*x+b
+
+plt.figure()
+plt.plot(x, y)
+plt.axvline(x=0, color='grey')
+plt.axhline(y=0, color='grey')
+plt.show()

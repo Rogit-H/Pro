@@ -1,0 +1,10 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+m = int(input("输入m:"))
+B = np.random.random((m,m))
+b = np.random.random((m,))
+Bx=b
+x = np.linalg.solve(B,b)
+
+print(x)

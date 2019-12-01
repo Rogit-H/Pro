@@ -1,0 +1,12 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+A = np.array([[7, 2], [3, 4], [5, 3]])
+U, D, V = np.linalg.svd(A)
+
+print("U是：")
+print(U)
+print("D是：")
+print(D)
+print("V是：")
+print(V)

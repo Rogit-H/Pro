@@ -1,0 +1,42 @@
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
+
+#给随机的x，y
+np.random.seed(123)
+x = 5*np.random.rand(100)
+y = 2*x + 1 + np.random.randn(100)
+#从生成的100个数中选择第一个数
+x = x.reshape(100, 1)
+y = y.reshape(100, 1)
+
+#求x， y的伪逆值
+A_plus = np.linalg.pinv(x)
+B_plus = np.linalg.pinv(y)
+coefsx = A_plus.dot(y)
+coefsy = B_plus.dot(x)
+
+#直线方程
+a = coefsx[0]
+b = coefsy[0]
+y1 = a*x + b
+
+print("斜率：%f, 截距: %f" %(a,b))
+print(coefsx)
+print(coefsy)
+
+X = np.hstack([x, y])
+print(X.shape)
+
+plt.figure()
+plt.plot(x, y1)
+# plt.axvline(x=0, color='grey')
+# plt.axhline(y=0, color='grey')
+
+
+plt.plot(X[:,0], X[:,1], '*')
+plt.show()
+
+
+U, D, V = np.linalg.svd(x)
+print(U, V, D)

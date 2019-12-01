@@ -1,0 +1,6 @@
+import pandas as  pd
+
+xiaoming = pd.DataFrame([1, 2, 3], index = ['yellow', 'red', 'blue'], columns = ['hat'])
+print(xiaoming)
+hat_ranks = pd.get_dummies(xiaoming['hat'], prefix = 'hat')
+print(hat_ranks.head())

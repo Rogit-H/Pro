@@ -1,0 +1,16 @@
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(123)
+x = 5*np.random.rand(100)
+y = 2*x + 1 + np.random.randn(100)
+
+x = x.reshape(100, 1)
+y = y.reshape(100, 1)
+
+X = np.hstack([x, y])
+print(X.shape)
+
+plt.plot(X[:,0], X[:,1], '*')
+plt.show()

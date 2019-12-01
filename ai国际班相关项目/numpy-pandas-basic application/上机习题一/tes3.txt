@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+b = int(input("Y的坐标:"))
+a = int(input("X的坐标:"))
+
+t =  math.pi/3+math.atan(math.tan(b/a))
+
+x1 = t
+y1 = b
+
+
+x = np.linspace(0,a,50)
+y = np.linspace(0,b,50)
+x1 = np.linspace(0,-x1,50)
+y1 = np.linspace(0,y1,50)
+
+plt.figure()
+plt.plot(x,y)
+plt.plot(x1, y1)
+plt.xlim(-9,9)
+plt.ylim(-9,9)
+
+
+
+# draw axes //箭头
+plt.axvline(x=0, color='grey')
+plt.axhline(y=0, color='grey')
+
+plt.show()
+plt.close()

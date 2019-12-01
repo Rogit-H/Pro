@@ -1,0 +1,20 @@
+Support vector machines.
+Apriori.
+EM.
+PageRank.
+AdaBoost.
+kNN.
+Naive Bayes.
+CART.
+
+https://link.springer.com/article/10.1007/s10115-007-0114-2
+https://pdfs.semanticscholar.org/2106/89f4aa492e1c9e4c5a2fe42d29dd1132422e.pdf
+
+人群寻脸推荐网络
+Retinanet
+
+工作岗位
+https://www.cnblogs.com/walccott/p/4957044.html
+
+python打包exe
+https://blog.csdn.net/job_hop/article/details/90108149

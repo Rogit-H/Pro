@@ -1,0 +1,17 @@
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.image as mpimg
+
+plt.style.use('classic')
+img = Image.open('tesr_svd.jpg')
+# convert image to grayscale
+imggray = img.convert('LA')
+# convert to numpy array
+imgmat = np.array(list(imggray.getdata(band=0)),float)
+#Reshape according to orginal image dimensions
+imgmat.shape = (imggray.size[2], imggray.size[0])
+
+plt.figure(figsize = (9, 6))
+plt.imshow(imgmat, cmap='gray')
+plt.show()
